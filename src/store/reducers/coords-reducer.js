@@ -9,7 +9,7 @@ const initialState = {
 	err: null
 }
 
-const reducer = {
+const reducers = {
 	actRemoveCoords(state, action) {
 		state.lat = null
 		state.lon = null
@@ -31,4 +31,7 @@ const extraReducers = builder => builder
 	state.err = action.payload
 })
 
-export default createSlice({ name, initialState, reducer, extraReducers })
+
+
+const coordsReducer = createSlice({ name, initialState, reducers, extraReducers })
+export default coordsReducer
